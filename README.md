@@ -1,4 +1,5 @@
 App built with Langchain Framework
+
 # Playing with Langchain Framework - From a Simple LLM APP to building with RAG and Agent
 
 ## Navigations
@@ -14,8 +15,13 @@ App built with Langchain Framework
 
 ## Folder Structure
 
+- tools/
+  -May Contains tools for the agents
 - main.py
 - pyproject.toml
+- poetry.lock
+- .gitignore
+- README.md
 
 ## Prerequisites
 
@@ -24,18 +30,29 @@ App built with Langchain Framework
 ## Startup Guide
 
 - Clone the repo and
-- Install the dependencies to setup your sustem to run the tests
-    ```
-        poetry install
-        poetry run python main.py
-    ```
+- Install the dependencies to setup your system to run the app
+  ```
+    poetry install
+  ```
+- Run the app
+  ```
+    poetry run python main.py
+  ```
 - Checkout the respective branch as you follow along the article
 
+- To install new package
+  ```
+    poetry add <package name>
+  ```
+
 ### Testing
-    ```
-        poetry run pytest
-    ```
+
+- To test
+  ```
+    poetry run pytest
+  ```
 
 ## Resources
 
 - [Langchain Quickstart](https://python.langchain.com/v0.1/docs/get_started/quickstart/)
+- [Poetry package tool for python](https://python-poetry.org/docs/)

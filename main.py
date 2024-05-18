@@ -10,12 +10,8 @@ from langchain import hub
 from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain.pydantic_v1 import BaseModel
 from langserve import add_routes
-from langchain_community.utilities import StackExchangeAPIWrapper
 from tools.custom import char_count_tool
 from tools.built_in import built_in_tools
-from langchain.agents.output_parsers.openai_tools import OpenAIToolsAgentOutputParser
-
-stackexchange = StackExchangeAPIWrapper()
 
 # 1. Load Retriever
 loader = WebBaseLoader(

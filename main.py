@@ -35,7 +35,7 @@ vector_db = None
 # This load_local and save_local are optional, it is just to avoid calculating embedding
 # and lossing some of your open AI credits unnecessarily
 try:
-    # Optional
+    # Check if the embedding data is already present(Optional)
     vector_db = FAISS.load_local(
         folder_path="./database/faiss_db",
         embeddings=embeddings,
@@ -44,6 +44,7 @@ try:
     )
     print("found the faiss locally")
 except Exception:
+    # If not then, try to use the docs to find embedding and create an in-memory vector-db
     print("Loading FAISS index to local")
     vector_db = FAISS.from_documents(documents, embeddings)
     # Optional

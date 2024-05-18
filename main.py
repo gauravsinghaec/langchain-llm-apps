@@ -13,6 +13,7 @@ from langserve import add_routes
 from langchain_community.utilities import StackExchangeAPIWrapper
 from tools.custom import char_count_tool
 from tools.built_in import built_in_tools
+from langchain.agents.output_parsers.openai_tools import OpenAIToolsAgentOutputParser
 
 stackexchange = StackExchangeAPIWrapper()
 
@@ -68,7 +69,6 @@ class Output(BaseModel):
 add_routes(
     app,
     agent_executor.with_types(input_type=Input, output_type=Output),
-    path="/agent",
 )
 
 if __name__ == "__main__":
